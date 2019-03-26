@@ -2,4 +2,5 @@ from django.shortcuts import render
 
 
 def index(request):
-    pass
+    context = dict()
+    return render(request, 'dashboard-index.html', context)
