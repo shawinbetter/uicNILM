@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="UIC NILM System">
+    <meta name="author" content="UIC NILM Develop team">
+    <title>{% block title %}{% endblock %} | UIC NILM</title>
+    <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+    {% block head_extends %}{% endblock %}
+</head>
+<body>
+<main id="main">
+    <div class="mt-3 container">
+        {% block body %}{% endblock %}
+    </div>
+</main>
+<footer class="footer mt-5 mb-3">
+    <div class="container">
+        <hr>
+        <span class="text-muted">&copy;2018-{% now "Y" %} UICNILM VERSION: 0.0.1 · PVG
+                {% now "H:i" %}{% block footer_extends %}{% endblock %}</span>
+    </div>
+</footer>
+{% block extra_js %}{% endblock %}
+</body>
+{% block out_of_body %}{% endblock %}
+</html>
